@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/dashboard"
+        android:icon="@drawable/ic_baseline_dashboard_24"
+        android:title="Dashboard" />
+
+    <item
+        android:id="@+id/my_bookings"
+        android:title="My Bookings"
+        android:icon="@drawable/ic_baseline_my_bookings"/>
+
+    <item
+        android:id="@+id/ondemand_bookings"
+        android:title="On Demand Booking"
+        android:icon="@drawable/ic_baseline_ondemand"
+       />
+
+    <item
+        android:id="@+id/add_bookings"
+        android:title="Add New Booking"
+        android:icon="@drawable/ic_baseline_add_bookings"/>
+
+    <item
+        android:id="@+id/profile"
+        android:title="Profile"
+        android:icon="@drawable/ic_baseline_person_24"/>
+
+    <item
+        android:icon="@drawable/ic_baseline_contact_us"
+        android:title="Contact Us"
+
+        />
+    <item
+        android:icon="@drawable/ic_baseline_privacy"
+        android:title="Privacy Policy" />
+
+</menu>

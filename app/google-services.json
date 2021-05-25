@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "574927959928",
+    "project_id": "customer-hub-fe27e",
+    "storage_bucket": "customer-hub-fe27e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:574927959928:android:bc2e482f19a7f6afdf3a8d",
+        "android_client_info": {
+          "package_name": "com.empiregroup.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "574927959928-9kp3ac5obtvn7btik4k3g5oflhk95atv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.empiregroup.myapplication",
+            "certificate_hash": "5a0dd5005035ea2a1ca3054b7af93692d4df5026"
+          }
+        },
+        {
+          "client_id": "574927959928-1c8i7nfhcdpur5t57csv95nbm4rideqj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjPlyWGcyXXxecP6pxvnLxURAmLQf17H8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "574927959928-1c8i7nfhcdpur5t57csv95nbm4rideqj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
