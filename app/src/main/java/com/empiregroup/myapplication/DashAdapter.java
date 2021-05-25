@@ -19,11 +19,13 @@ public class DashAdapter extends RecyclerView.Adapter<DashAdapter.MyViewHolder> 
             "08",
             "00",
             "08",
+            "08",
             "00"
     };
 
     public String[] lst_head = {
             "Booking Scheduled Today",
+            "Booking Scheduled Tomorrow",
             "Booking Scheduled Tomorrow",
             "Completed Bookings",
             "Cancelled Bookings",
@@ -31,6 +33,7 @@ public class DashAdapter extends RecyclerView.Adapter<DashAdapter.MyViewHolder> 
     };
     public String[] lst_desc = {
            "Bookings which are scheduled for today",
+            "Bookings which are scheduled for tomorrow",
             "Bookings which are scheduled for tomorrow",
             "These are bookings which have been completed",
             "Bookings which have been cancelled",
