@@ -1,15 +1,15 @@
-package com.empiregroup.myapplication;
+package com.empiregroup.myapplication.adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckedTextView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.empiregroup.myapplication.R;
 import com.empiregroup.myapplication.entities.LanguageModel;
 
 import org.jetbrains.annotations.NotNull;
@@ -39,8 +39,8 @@ public class DemandAdapter extends RecyclerView.Adapter<DemandAdapter.MyViewHold
     @NonNull
     @NotNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.row_ondemand, viewGroup, false);
+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_ondemand, parent, false);
 
 
 

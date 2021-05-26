@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.empiregroup.myapplication.adapters.DemandAdapter;
 import com.empiregroup.myapplication.entities.LanguageModel;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -22,7 +23,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-public class activity_onDemand extends AppCompatActivity {
+public class OnDemand extends AppCompatActivity {
     Button btncont;
     RecyclerView lrecyclerView;
     ImageButton imageButton;
@@ -62,7 +63,7 @@ public class activity_onDemand extends AppCompatActivity {
         imageButton = findViewById(R.id.imageButton);
         languageModelList = new ArrayList<>();
 
-        databaseLanguages = FirebaseDatabase.getInstance().getReference();
+        databaseLanguages = FirebaseDatabase.getInstance().getReference("Languages");
     }
 
 }

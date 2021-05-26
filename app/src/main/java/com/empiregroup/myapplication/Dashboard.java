@@ -1,28 +1,32 @@
 package com.empiregroup.myapplication;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.recyclerview.widget.DefaultItemAnimator;
-import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.empiregroup.myapplication.adapters.DashAdapter;
+import com.empiregroup.myapplication.entities.DashModel;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import org.jetbrains.annotations.NotNull;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Dashboard extends AppCompatActivity {
 
@@ -30,6 +34,8 @@ public class Dashboard extends AppCompatActivity {
     ImageButton imageButton;
     DrawerLayout drawer;
     NavigationView navigation;
+    List<DashModel> dashModelList;
+    DatabaseReference databaseDash;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +46,26 @@ public class Dashboard extends AppCompatActivity {
 
         dashRecyclerView.setHasFixedSize(true);
         dashRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        dashRecyclerView.setAdapter(new DashAdapter());
+
+
+        databaseDash.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
+                for (DataSnapshot dataSnapshot:snapshot.getChildren()){
+                    DashModel dashModel = dataSnapshot.getValue(DashModel.class);
+
+
+                    dashModelList.add(dashModel);
+                }
+                dashRecyclerView.setAdapter(new DashAdapter(dashModelList));
+            }
+
+            @Override
+            public void onCancelled(@NonNull @NotNull DatabaseError error) {
+                Toast.makeText(getApplicationContext(),error.getMessage(),Toast.LENGTH_LONG).show();
+            }
+        });
+        //dashRecyclerView.setAdapter(new DashAdapter());
 
 
         imageButton.setOnClickListener(new View.OnClickListener() {
@@ -50,6 +75,7 @@ public class Dashboard extends AppCompatActivity {
                     drawer.closeDrawer(GravityCompat.START);
                 else
                     drawer.openDrawer(GravityCompat.START);
+
             }
         });
 
@@ -62,7 +88,7 @@ public class Dashboard extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(), Dashboard.class));
                         break;
                     case R.id.ondemand_bookings:
-                        startActivity(new Intent(getApplicationContext(), activity_onDemand.class));
+                        startActivity(new Intent(getApplicationContext(), OnDemand.class));
                         break;
 
 
@@ -80,6 +106,10 @@ public class Dashboard extends AppCompatActivity {
         imageButton = findViewById(R.id.imageButton);
         drawer = findViewById(R.id.drawer);
         navigation = findViewById(R.id.navigation);
+
+        dashModelList = new ArrayList<>();
+
+        databaseDash = FirebaseDatabase.getInstance().getReference("Dash");
 
     }
 

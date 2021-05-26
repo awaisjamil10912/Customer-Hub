@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name=".activity_onDemand"></activity>
+        <activity android:name=".OnDemand"></activity>
         <activity android:name=".Dashboard" />
         <activity android:name=".Login">
             <intent-filter>
