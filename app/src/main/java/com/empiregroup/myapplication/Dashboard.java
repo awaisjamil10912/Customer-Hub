@@ -97,9 +97,7 @@ public class Dashboard extends AppCompatActivity {
             }
         });
 
-
     }
-
 
     public void init() {
         dashRecyclerView = findViewById(R.id.dashRecyclerView);
