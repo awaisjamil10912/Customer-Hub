@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
@@ -89,6 +90,10 @@ public class Dashboard extends AppCompatActivity {
                         break;
                     case R.id.ondemand_bookings:
                         startActivity(new Intent(getApplicationContext(), OnDemand.class));
+                        break;
+
+                    case R.id.profile:
+                        startActivity(new Intent(getApplicationContext(), Profile.class));
                         break;
 
 

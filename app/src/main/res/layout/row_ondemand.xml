@@ -14,7 +14,6 @@
         android:layout_marginEnd="8dp"
         android:background="@drawable/bg_row_ondemand"
 
-        android:checkMark="@drawable/ic_baseline_check_24"
         android:checked="true"
         android:gravity="center"
         android:padding="6dp"
